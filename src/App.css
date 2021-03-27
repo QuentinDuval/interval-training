@@ -8,7 +8,7 @@
   color: white;
   width: calc(600px + 20vmin);
   display: inline-block;
-  margin-top: calc(30px + 6vmin);
+  margin-top: calc(15px + 3vmin);
 }
 
 .round-tracker {
