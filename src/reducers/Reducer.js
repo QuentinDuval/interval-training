@@ -8,6 +8,11 @@ export function initState() {
 }
 
 
+export function pause_action() {
+    return {type: 'PAUSE'};
+}
+
+
 export function increment_action() {
     return {type: 'INCREMENT'};
 }
@@ -18,6 +23,10 @@ export function main_reducer(state, action) {
         initState()
     }
     switch(action.type) {
+        case 'PAUSE':
+            let new_state = {...state};
+            new_state.pause = !new_state.pause;
+            return new_state;
         case 'INCREMENT':
             if (state.pause) {
                 return state;

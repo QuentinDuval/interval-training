@@ -4,7 +4,7 @@ import React from "react";
 import {Provider} from 'react-redux';
 import {createStore} from 'redux';
 import {initState, reducer} from './reducers/Reducer.js';
-import {Clock, ClockTick} from './Clock.js'
+import {Panel} from './Panel.js'
 
 
 class App extends React.Component {
@@ -18,8 +18,7 @@ class App extends React.Component {
         <div className="App">
           <header className="App-header">
             <img src={logo} className="App-logo" alt="logo" />
-            <Clock/>
-            <ClockTick/>
+            <Panel/>
           </header>
         </div>
       </Provider>
