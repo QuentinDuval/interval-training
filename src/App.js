@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import React from "react";
 import {Provider} from 'react-redux';
@@ -17,7 +16,6 @@ class App extends React.Component {
       <Provider store={store}>
         <div className="App">
           <header className="App-header">
-            <img src={logo} className="App-logo" alt="logo" />
             <Panel/>
           </header>
         </div>
