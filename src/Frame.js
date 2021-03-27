@@ -5,7 +5,7 @@ function FrameRenderer({children, pause, total_seconds, round_duration, round_re
     let color = "#f4f4f4";
     if (!pause) {
         const in_round_seconds = total_seconds % (round_duration + round_rest);
-        if (in_round_seconds <= round_duration) {
+        if (in_round_seconds < round_duration) {
             color = background_exercise;
         } else {
             color = background_rest;
