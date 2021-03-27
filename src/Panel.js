@@ -7,15 +7,15 @@ import {RoundTracker} from './RoundTracker';
 
 
 function PanelRenderer({dispatch, total_rounds}) {
-    console.log(dispatch);
     return <div>
         <Clock/>
         <RoundTracker/>
-        <Button text="Pause" onClick={() => dispatch(pause_action())}/>
-        <InputField value={total_rounds}
-        onChange={
-            (e) => dispatch(set_nb_rounds(e.target.value))
-        }/>
+        <Button
+            text="Pause"
+            onClick={() => dispatch(pause_action())}/>
+        <InputField
+            value={total_rounds}
+            onChange={(e) => dispatch(set_nb_rounds(e.target.value))}/>
     </div>;
 }
 
