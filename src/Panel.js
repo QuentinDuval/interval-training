@@ -1,12 +1,13 @@
 import {connect} from "react-redux";
-import {pause_action, reset_action} from './reducers/Reducer';
+import {pause_action, reset_action, new_background_color} from './reducers/Reducer';
 import {Clock} from './Clock.js'
 import {Button, ButtonGroup} from './components/Button.js';
 import {RoundTracker} from './RoundTracker';
 import {Options} from "./Options";
+import {ColorSelector} from "./ColorSelector";
 
 
-function PanelRenderer({dispatch, pause}) {
+function PanelRenderer({dispatch, pause, background}) {
     return <div>
         <Clock/>
         <RoundTracker/>
@@ -22,6 +23,10 @@ function PanelRenderer({dispatch, pause}) {
         </ButtonGroup>
         <br/>
         <Options/>
+        <ColorSelector
+            color={background}
+            onChange={(color) => dispatch(new_background_color(color))}
+        />
     </div>;
 }
 
@@ -29,6 +34,7 @@ function PanelRenderer({dispatch, pause}) {
 const toProps = (state, props) => {
     return {
         pause: state.pause,
+        background: state.background,
         ...props,
     };
 }

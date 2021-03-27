@@ -10,6 +10,8 @@ export function initState() {
         round_duration: 45,
         round_rest: 15,
         total_rounds: 9,
+
+        background: "#fff",
     }
 }
 
@@ -44,6 +46,11 @@ export function set_round_rest(new_val) {
 }
 
 
+export function new_background_color(new_val) {
+    return {type: "BACKGROUND", value: new_val}
+}
+
+
 function add_one_second(state) {
     let new_state = {...state};
     new_state.seconds += 1;
@@ -65,6 +72,8 @@ export function main_reducer(state, action) {
         initState()
     }
     switch(action.type) {
+        case "BACKGROUND":
+            return {...state, background: action.value};
         case "NB_ROUNDS":
             return {...state, total_rounds: action.value};
         case "ROUND_DUR":
