@@ -8,7 +8,7 @@ export function initState() {
         seconds: 0,
 
         round_duration: 45,
-        round_pause: 15,
+        round_rest: 15,
         total_rounds: 9,
     }
 }
@@ -19,6 +19,11 @@ export function pause_action() {
 }
 
 
+export function restart_action() {
+    return {type: 'RESTART'};
+}
+
+
 export function increment_action() {
     return {type: 'INCREMENT'};
 }
@@ -26,6 +31,16 @@ export function increment_action() {
 
 export function set_nb_rounds(new_val) {
     return {type: 'NB_ROUNDS', value: new_val};
+}
+
+
+export function set_round_duration(new_val) {
+    return {type: 'ROUND_DUR', value: new_val};
+}
+
+
+export function set_round_rest(new_val) {
+    return {type: 'ROUND_REST', value: new_val};
 }
 
 
@@ -52,8 +67,20 @@ export function main_reducer(state, action) {
     switch(action.type) {
         case "NB_ROUNDS":
             return {...state, total_rounds: action.value};
+        case "ROUND_DUR":
+            return {...state, round_duration: action.value};
+        case "ROUND_REST":
+            return {...state, round_rest: action.value};
         case 'PAUSE':
             return {...state, pause: !state.pause};
+        case 'RESTART':
+            return {
+                ...state,
+                total_seconds: 0,
+                hours: 0,
+                minutes: 0,
+                seconds: 0,
+            };
         case 'INCREMENT':
             if (state.pause) {
                 return state;

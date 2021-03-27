@@ -1,12 +1,12 @@
 import {connect} from "react-redux";
-import {pause_action, set_nb_rounds} from './reducers/Reducer';
+import {pause_action, restart_action, set_nb_rounds, set_round_duration, set_round_rest} from './reducers/Reducer';
 import {Clock} from './Clock.js'
 import {Button} from './components/Button.js';
-import {InputField} from './components/InputField';
+import {IntegerInputField} from './components/InputField';
 import {RoundTracker} from './RoundTracker';
 
 
-function PanelRenderer({dispatch, total_rounds}) {
+function PanelRenderer({dispatch, total_rounds, round_duration, round_rest}) {
     return <div>
         <Clock/>
         <RoundTracker/>
@@ -14,21 +14,26 @@ function PanelRenderer({dispatch, total_rounds}) {
             text="Pause"
             onClick={() => dispatch(pause_action())}/>
         <br/>
+
+        <Button
+            text="Restart"
+            onClick={() => dispatch(restart_action())}/>
+        <br/>
         
-        <InputField
+        <IntegerInputField
             title="rounds"
             value={total_rounds}
-            onChange={(e) => dispatch(set_nb_rounds(e.target.value))}/>
+            onChange={(v) => dispatch(set_nb_rounds(v))}/>
         
-        <InputField
+        <IntegerInputField
             title="active"
-            value={total_rounds}
-            onChange={(e) => dispatch(set_nb_rounds(e.target.value))}/>
+            value={round_duration}
+            onChange={(v) => dispatch(set_round_duration(v))}/>
 
-        <InputField
+        <IntegerInputField
             title="resting"
-            value={total_rounds}
-            onChange={(e) => dispatch(set_nb_rounds(e.target.value))}/>
+            value={round_rest}
+            onChange={(v) => dispatch(set_round_rest(v))}/>
     </div>;
 }
 
@@ -36,6 +41,8 @@ function PanelRenderer({dispatch, total_rounds}) {
 const toProps = (state, props) => {
     return {
         total_rounds: state.total_rounds,
+        round_duration: state.round_duration,
+        round_rest: state.round_rest,
         ...props,
     };
 }

@@ -14,7 +14,7 @@ function RoundTrackerR({seconds, duration, total}) {
 const toProps = (state, props) => {
     return {
         seconds: state.total_seconds,
-        duration: state.round_duration + state.round_pause,
+        duration: state.round_duration + state.round_rest,
         total: state.total_rounds,
         ...props,
     };
