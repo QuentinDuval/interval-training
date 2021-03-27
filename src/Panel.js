@@ -13,7 +13,7 @@ function PanelRenderer({dispatch, pause}) {
         <ButtonGroup>
             <Button
                 className={pause ? "restart-button" : "pause-button"}
-                text={pause ? "Restart" : "Pause"}
+                text={pause ? "Start" : "Stop"}
                 onClick={() => dispatch(pause_action())}/>
             <Button
                 className="reset-button"
