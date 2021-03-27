@@ -4,17 +4,18 @@
 
 .clock {
   font-family: monospace;
-  font-size: calc(50px + 10vmin);
+  font-size: calc(60px + 12vmin);
   color: white;
-  width: calc(600px + 10vmin);
+  width: calc(600px + 20vmin);
   display: inline-block;
+  margin-top: calc(30px + 6vmin);
 }
 
 .round-tracker {
   font-family: monospace;
-  font-size: calc(30px + 6vmin);
+  font-size: calc(50px + 10vmin);
   color: white;
-  margin-bottom: 50px;
+  margin-bottom: calc(30px + 6vmin);
 }
 
 .input-field {
@@ -32,7 +33,7 @@
 .input-field-content {
   margin: 5px;
   font-size: calc(10px + 2vmin);
-  width: 40%;
+  width: 30%;
   text-align: right;
 }
 

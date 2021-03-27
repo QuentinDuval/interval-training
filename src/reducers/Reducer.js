@@ -19,8 +19,8 @@ export function pause_action() {
 }
 
 
-export function restart_action() {
-    return {type: 'RESTART'};
+export function reset_action() {
+    return {type: 'RESET'};
 }
 
 
@@ -73,7 +73,7 @@ export function main_reducer(state, action) {
             return {...state, round_rest: action.value};
         case 'PAUSE':
             return {...state, pause: !state.pause};
-        case 'RESTART':
+        case 'RESET':
             return {
                 ...state,
                 total_seconds: 0,
