@@ -1,6 +1,6 @@
-import React from 'react'
-import { ChromePicker } from 'react-color'
-import reactCSS from 'reactcss'
+import React from 'react';
+import { ChromePicker } from 'react-color';
+import reactCSS from 'reactcss';
 
 
 export class ColorSelector extends React.Component {

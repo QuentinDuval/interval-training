@@ -16,10 +16,8 @@ class App extends React.Component {
     return (
       <Provider store={store}>
         <div className="App">
-          <header className="App-header">
-            <ClockTick/>
-            <Panel/>
-          </header>
+          <ClockTick/>
+          <Panel/>
         </div>
       </Provider>
     );

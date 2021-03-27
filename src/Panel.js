@@ -5,10 +5,11 @@ import {Button, ButtonGroup} from './components/Button.js';
 import {RoundTracker} from './RoundTracker';
 import {Options} from "./Options";
 import { Colors } from "./Colors";
+import { Frame } from "./Frame";
 
 
 function PanelRenderer({dispatch, pause}) {
-    return <div>
+    return <Frame>
         <Clock/>
         <RoundTracker/>
         <ButtonGroup>
@@ -24,7 +25,7 @@ function PanelRenderer({dispatch, pause}) {
         <br/>
         <Colors/>
         <Options/>
-    </div>;
+    </Frame>;
 }
 
 
