@@ -1,16 +1,32 @@
 import {connect} from "react-redux";
-import {pause_action} from './reducers/Reducer';
+import {pause_action, set_nb_rounds} from './reducers/Reducer';
 import {Clock} from './Clock.js'
 import {Button} from './components/Button.js';
+import {InputField} from './components/InputField';
+import {RoundTracker} from './RoundTracker';
 
 
-function PanelRenderer({dispatch}) {
+function PanelRenderer({dispatch, total_rounds}) {
     console.log(dispatch);
     return <div>
         <Clock/>
+        <RoundTracker/>
         <Button text="Pause" onClick={() => dispatch(pause_action())}/>
+        <InputField value={total_rounds}
+        onChange={
+            (e) => dispatch(set_nb_rounds(e.target.value))
+        }/>
     </div>;
 }
 
 
-export const Panel = connect()(PanelRenderer);
+const toProps = (state, props) => {
+    return {
+        total_rounds: state.total_rounds,
+        ...props,
+    };
+}
+
+
+
+export const Panel = connect(toProps)(PanelRenderer);
