@@ -13,7 +13,10 @@ function PanelRenderer({dispatch, total_rounds}) {
         <Button
             text="Pause"
             onClick={() => dispatch(pause_action())}/>
+        <br/>
+        
         <InputField
+            title="#rounds"
             value={total_rounds}
             onChange={(e) => dispatch(set_nb_rounds(e.target.value))}/>
     </div>;
