@@ -1,12 +1,12 @@
 import {connect} from "react-redux";
-import {pause_action, restart_action, set_nb_rounds, set_round_duration, set_round_rest} from './reducers/Reducer';
+import {pause_action, restart_action} from './reducers/Reducer';
 import {Clock} from './Clock.js'
 import {Button} from './components/Button.js';
-import {IntegerInputField} from './components/InputField';
 import {RoundTracker} from './RoundTracker';
+import { Options } from "./Options";
 
 
-function PanelRenderer({dispatch, total_rounds, round_duration, round_rest}) {
+function PanelRenderer({dispatch}) {
     return <div>
         <Clock/>
         <RoundTracker/>
@@ -19,34 +19,9 @@ function PanelRenderer({dispatch, total_rounds, round_duration, round_rest}) {
             text="Restart"
             onClick={() => dispatch(restart_action())}/>
         <br/>
-        
-        <IntegerInputField
-            title="rounds"
-            value={total_rounds}
-            onChange={(v) => dispatch(set_nb_rounds(v))}/>
-        
-        <IntegerInputField
-            title="active"
-            value={round_duration}
-            onChange={(v) => dispatch(set_round_duration(v))}/>
-
-        <IntegerInputField
-            title="resting"
-            value={round_rest}
-            onChange={(v) => dispatch(set_round_rest(v))}/>
+        <Options/>
     </div>;
 }
 
 
-const toProps = (state, props) => {
-    return {
-        total_rounds: state.total_rounds,
-        round_duration: state.round_duration,
-        round_rest: state.round_rest,
-        ...props,
-    };
-}
-
-
-
-export const Panel = connect(toProps)(PanelRenderer);
+export const Panel = connect()(PanelRenderer);
