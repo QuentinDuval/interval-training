@@ -1,6 +1,24 @@
 import {connect} from "react-redux";
 
 
+function hexToRgb(hex) {
+    let result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+    return result ? {
+      r: parseInt(result[1], 16),
+      g: parseInt(result[2], 16),
+      b: parseInt(result[3], 16)
+    } : null;
+}
+
+
+function brightness(rgb) {
+    return Math.round(
+        ((rgb.r * 299) +
+        (rgb.g * 587) +
+        (rgb.b * 114)) / 1000);
+}
+
+
 function FrameRenderer({children, pause, total_seconds, round_duration, round_rest, background_exercise_1, background_exercise_2, background_rest}) {
     let color = "#f4f4f4";
     if (!pause) {
@@ -16,7 +34,10 @@ function FrameRenderer({children, pause, total_seconds, round_duration, round_re
             color = background_rest;
         }
     }
-    return <div style={{backgroundColor: color}}>
+    console.log(hexToRgb(color))
+    console.log(brightness(hexToRgb(color)))
+    const textColour = (brightness(hexToRgb(color)) > 125) ? "#1b1b1b" : 'white';
+    return <div style={{backgroundColor: color, color: textColour}}>
         <header className="App-header">
             {children}
         </header>

@@ -11,8 +11,8 @@ export function initState() {
         round_rest: 15,
         total_rounds: 20,
 
-        background_exercise_1: "#1897B1",
-        background_exercise_2: "#5cb85c",
+        background_exercise_1: "#58C2D8",
+        background_exercise_2: "#116B7D",
         background_rest: "#d9534f",
     }
 }
