@@ -67,6 +67,11 @@
   background-color: gray;
 }
 
+.color-selector {
+  display: inline-block;
+  margin: 5px;
+}
+
 .App-header {
   background-color: #f4f4f4;
   min-height: 100vh;

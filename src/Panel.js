@@ -26,6 +26,10 @@ function PanelRenderer({dispatch, pause, background}) {
             color={background}
             onChange={(color) => dispatch(new_background_color(color))}
         />
+        <ColorSelector
+            color={background}
+            onChange={(color) => dispatch(new_background_color(color))}
+        />
         <Options/>
     </div>;
 }

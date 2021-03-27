@@ -50,7 +50,7 @@ export class ColorSelector extends React.Component {
             },
           });
           
-        return <div>
+        return <div className="color-selector">
             <div style={ styles.swatch } onClick={ this.handleClick }>
                 <div style={ styles.color } />
             </div>
