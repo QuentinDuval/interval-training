@@ -1,5 +1,5 @@
 import React from 'react'
-import { TwitterPicker } from 'react-color'
+import { ChromePicker } from 'react-color'
 import reactCSS from 'reactcss'
 
 
@@ -57,7 +57,7 @@ export class ColorSelector extends React.Component {
             { this.state.displayColorPicker ?
                 <div style={styles.popover}>
                     <div style={styles.cover} onClick={this.handleClose}/>
-                    <TwitterPicker
+                    <ChromePicker
                         color={this.props.color}
                         onChangeComplete={(color) => this.props.onChange(color.hex)}
                     />
