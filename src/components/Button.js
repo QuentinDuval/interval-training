@@ -1,8 +1,11 @@
 import React from 'react';
 
-export function Button({text, onClick, isInner = false}) {
+export function Button({text, onClick, className, isInner = false}) {
+    let buttonClassName = "button";
+    if (className !== undefined);
+        buttonClassName += " " + className;
     return <div className={isInner ? "button-inner" : ""}>
-        <button className="button" onClick={onClick}>
+        <button className={buttonClassName} onClick={onClick}>
             {text}
         </button>
     </div>;

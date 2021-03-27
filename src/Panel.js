@@ -6,15 +6,17 @@ import {RoundTracker} from './RoundTracker';
 import {Options} from "./Options";
 
 
-function PanelRenderer({dispatch}) {
+function PanelRenderer({dispatch, pause}) {
     return <div>
         <Clock/>
         <RoundTracker/>
         <ButtonGroup>
             <Button
-                text="Pause"
+                className={pause ? "restart-button" : "pause-button"}
+                text={pause ? "Restart" : "Pause"}
                 onClick={() => dispatch(pause_action())}/>
             <Button
+                className="reset-button"
                 text="Reset"
                 onClick={() => dispatch(reset_action())}/>
         </ButtonGroup>
@@ -24,4 +26,12 @@ function PanelRenderer({dispatch}) {
 }
 
 
-export const Panel = connect()(PanelRenderer);
+const toProps = (state, props) => {
+    return {
+        pause: state.pause,
+        ...props,
+    };
+}
+
+
+export const Panel = connect(toProps)(PanelRenderer);
