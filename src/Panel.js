@@ -16,7 +16,17 @@ function PanelRenderer({dispatch, total_rounds}) {
         <br/>
         
         <InputField
-            title="#rounds"
+            title="rounds"
+            value={total_rounds}
+            onChange={(e) => dispatch(set_nb_rounds(e.target.value))}/>
+        
+        <InputField
+            title="active"
+            value={total_rounds}
+            onChange={(e) => dispatch(set_nb_rounds(e.target.value))}/>
+
+        <InputField
+            title="resting"
             value={total_rounds}
             onChange={(e) => dispatch(set_nb_rounds(e.target.value))}/>
     </div>;

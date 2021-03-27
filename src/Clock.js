@@ -30,9 +30,9 @@ class ClockTicker extends React.Component {
 function ClockRenderer({hours, minutes, seconds}) {
     return <div className="clock">
         <span>{pad_with_zeros(hours, 2)}</span>
-        <span> : </span>
+        <span>:</span>
         <span>{pad_with_zeros(minutes, 2)}</span>
-        <span> : </span>
+        <span>:</span>
         <span>{pad_with_zeros(seconds, 2)}</span>
     </div>;
 }

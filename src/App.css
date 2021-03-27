@@ -3,6 +3,7 @@
 }
 
 .clock {
+  font-family: monospace;
   font-size: calc(50px + 10vmin);
   color: white;
 }
@@ -13,14 +14,23 @@
   margin-bottom: 50px;
 }
 
+.input-field {
+  width: 100%;
+}
+
 .input-field-title {
   margin: 5px;
   margin-right: 10px;
+  width: 120px;
+  display: inline-block;
+  text-align: left;
 }
 
-.input-field {
+.input-field-content {
   margin: 5px;
   font-size: calc(10px + 2vmin);
+  width: 40%;
+  text-align: right;
 }
 
 .button {
