@@ -1,6 +1,6 @@
 export function initState() {
     return {
-        pause: false,
+        pause: true,
 
         total_seconds: 0,
         hours: 0,
@@ -11,7 +11,8 @@ export function initState() {
         round_rest: 15,
         total_rounds: 9,
 
-        background: "#fff",
+        background_exercise: "#5cb85c",
+        background_rest: "#d9534f",
     }
 }
 
@@ -46,8 +47,13 @@ export function set_round_rest(new_val) {
 }
 
 
-export function new_background_color(new_val) {
-    return {type: "BACKGROUND", value: new_val}
+export function new_background_exercise(new_val) {
+    return {type: "BACKGROUND_EXERCISE", value: new_val}
+}
+
+
+export function new_background_rest(new_val) {
+    return {type: "BACKGROUND_REST", value: new_val}
 }
 
 
@@ -72,8 +78,10 @@ export function main_reducer(state, action) {
         initState()
     }
     switch(action.type) {
-        case "BACKGROUND":
-            return {...state, background: action.value};
+        case "BACKGROUND_EXERCISE":
+            return {...state, background_exercise: action.value};
+        case "BACKGROUND_REST":
+            return {...state, background_rest: action.value};
         case "NB_ROUNDS":
             return {...state, total_rounds: action.value};
         case "ROUND_DUR":
