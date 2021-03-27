@@ -16,7 +16,9 @@ export function IntegerInputField({title, value, onChange}) {
         value={value.toString()}
         onChange={
             (val) => {
-                if (!isNaN(val)) {
+                if (val === "") {
+                    onChange(0);
+                } else if (!isNaN(val)) {
                     onChange(parseInt(val));
                 }
             }
