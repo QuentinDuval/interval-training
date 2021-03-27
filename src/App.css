@@ -6,9 +6,12 @@
   font-family: monospace;
   font-size: calc(50px + 10vmin);
   color: white;
+  width: calc(600px + 10vmin);
+  display: inline-block;
 }
 
 .round-tracker {
+  font-family: monospace;
   font-size: calc(30px + 6vmin);
   color: white;
   margin-bottom: 50px;
@@ -33,9 +36,20 @@
   text-align: right;
 }
 
+.button-group {
+  width: 100%;
+  text-align: center;
+}
+
+.button-inner {
+  display: inline-block;
+}
+
 .button {
   font-size: calc(10px + 2vmin);
   margin: 5px;
+  display: inline-block;
+  width: calc(100px + 10vmin);
 }
 
 .App-header {

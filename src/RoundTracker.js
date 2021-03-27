@@ -5,7 +5,7 @@ function RoundTrackerR({seconds, duration, total}) {
     let current = Math.floor(seconds / duration);
     return <div className="round-tracker">
         <span>{Math.min(current, total)}</span>
-        <span> / </span>
+        <span>/</span>
         <span>{total}</span>
     </div>;
 }
