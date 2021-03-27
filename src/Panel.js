@@ -22,11 +22,11 @@ function PanelRenderer({dispatch, pause, background}) {
                 onClick={() => dispatch(reset_action())}/>
         </ButtonGroup>
         <br/>
-        <Options/>
         <ColorSelector
             color={background}
             onChange={(color) => dispatch(new_background_color(color))}
         />
+        <Options/>
     </div>;
 }
 

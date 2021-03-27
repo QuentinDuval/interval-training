@@ -5,7 +5,6 @@
 .clock {
   font-family: monospace;
   font-size: calc(60px + 12vmin);
-  color: white;
   width: calc(600px + 20vmin);
   display: inline-block;
   margin-top: calc(15px + 3vmin);
@@ -14,7 +13,6 @@
 .round-tracker {
   font-family: monospace;
   font-size: calc(50px + 10vmin);
-  color: white;
   margin-bottom: calc(30px + 6vmin);
 }
 
@@ -70,12 +68,12 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #f4f4f4;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: #1b1b1b;
 }
