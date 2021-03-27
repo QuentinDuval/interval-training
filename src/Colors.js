@@ -1,13 +1,17 @@
 import {connect} from "react-redux";
-import {new_background_exercise, new_background_rest} from './reducers/Reducer';
+import {new_background_exercise_1, new_background_exercise_2, new_background_rest} from './reducers/Reducer';
 import {ColorSelector} from './ColorSelector';
 
 
-function ColorsRenderer({dispatch, background_exercise, background_rest}) {
+function ColorsRenderer({dispatch, background_exercise_1, background_exercise_2, background_rest}) {
     return <div>
         <ColorSelector
-            color={background_exercise}
-            onChange={(color) => dispatch(new_background_exercise(color))}
+            color={background_exercise_1}
+            onChange={(color) => dispatch(new_background_exercise_1(color))}
+        />
+        <ColorSelector
+            color={background_exercise_2}
+            onChange={(color) => dispatch(new_background_exercise_2(color))}
         />
         <ColorSelector
             color={background_rest}
@@ -19,7 +23,8 @@ function ColorsRenderer({dispatch, background_exercise, background_rest}) {
 
 const toProps = (state, props) => {
     return {
-        background_exercise: state.background_exercise,
+        background_exercise_1: state.background_exercise_1,
+        background_exercise_2: state.background_exercise_2,
         background_rest: state.background_rest,
         ...props,
     };
