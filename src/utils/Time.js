@@ -16,3 +16,17 @@ export function secondsToTime(total_seconds) {
         pad_with_zeros(total_seconds % 60, 2)
     ];
 }
+
+export function timeToSeconds(time_str) {
+    let parts = time_str.split(':');
+    while (parts.length < 3) {
+        parts.unshift("00");
+    }
+    let [h, m, s] = parts;
+    let seconds = parseInt(h) * 3600 + parseInt(m) * 60 + parseInt(s);
+    if (isNaN(seconds)) {
+        return 0;
+    } else {
+        return seconds;
+    }
+}

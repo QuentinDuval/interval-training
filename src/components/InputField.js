@@ -1,4 +1,4 @@
-import {secondsToTime} from '../utils/Time';
+import {secondsToTime, timeToSeconds} from '../utils/Time';
 
 
 export function InputField({title, value, onChange, readOnly = false}) {
@@ -30,11 +30,23 @@ export function IntegerInputField({title, value, onChange, readOnly=false}) {
     />;
 }
 
-export function TimeInputField({title, value}) {
+export function TimeInputField({title, value, onChange, readOnly=false}) {
     const [h, m, s] = secondsToTime(value);
+    let valueToDisplay = h + ":" + m + ":" + s;
+    if (h === "00") {
+        valueToDisplay = m + ":" + s;
+        if (m[0] === "0") {
+            valueToDisplay = m[1] + ":" + s;
+        }
+    } else if (h[0] === "0") {
+        valueToDisplay = h[1] + ":" + m + ":" + s;
+    }
     return <InputField
         title={title}
-        value={h + ":" + m + ":" + s}
-        readOnly={true}
+        value={valueToDisplay}
+        onChange={(val) => {
+            onChange(timeToSeconds(val))
+        }}
+        readOnly={readOnly}
     />;
 }

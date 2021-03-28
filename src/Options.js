@@ -9,18 +9,18 @@ export function OptionsRenderer({dispatch, total_rounds, round_duration, round_r
             title="rounds"
             value={total_rounds}
             onChange={(v) => dispatch(set_nb_rounds(v))}/>
-        <IntegerInputField
+        <TimeInputField
             title="active"
             value={round_duration}
             onChange={(v) => dispatch(set_round_duration(v))}/>
-        <IntegerInputField
+        <TimeInputField
             title="resting"
             value={round_rest}
             onChange={(v) => dispatch(set_round_rest(v))}/>
         <TimeInputField
             title="total time"
             value={(round_duration + round_rest) * total_rounds}
-            onChange={(v) => dispatch(set_round_rest(v))}/>
+            readOnly/>
     </div>
 }
 
