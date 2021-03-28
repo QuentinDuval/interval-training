@@ -1,6 +1,6 @@
 import {connect} from "react-redux";
 import {increment_action} from './reducers/Reducer';
-import {pad_with_zeros} from './utils/Time';
+import {pad_with_zeros, secondsToTime} from './utils/Time';
 import React from 'react';
 
 
@@ -31,10 +31,11 @@ function ClockRenderer({hours, minutes, seconds}) {
 
 
 const toProps = (state, props) => {
+    const [h, m, s] = secondsToTime(state.total_seconds);
     return {
-        hours: state.hours,
-        minutes: state.minutes,
-        seconds: state.seconds,
+        hours: h,
+        minutes: m,
+        seconds: s,
         ...props,
     };
 }
