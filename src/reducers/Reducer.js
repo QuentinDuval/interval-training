@@ -7,8 +7,8 @@ export function initState() {
         minutes: 0,
         seconds: 0,
 
-        round_duration: 45,
-        round_rest: 15,
+        round_duration: 590,
+        round_rest: 10,
         total_rounds: 20,
 
         background_exercise_1: "#58C2D8",
