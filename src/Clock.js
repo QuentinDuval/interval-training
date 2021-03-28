@@ -1,15 +1,7 @@
 import {connect} from "react-redux";
 import {increment_action} from './reducers/Reducer';
+import {pad_with_zeros} from './utils/Time';
 import React from 'react';
-
-
-function pad_with_zeros(num, size) {
-    let s = num + "";
-    while (s.length < size) {
-        s = "0" + s;
-    }
-    return s;
-}
 
 
 class ClockTicker extends React.Component {

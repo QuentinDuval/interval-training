@@ -13,7 +13,7 @@
 .round-tracker {
   font-family: monospace;
   font-size: calc(50px + 10vmin);
-  margin-bottom: calc(30px + 6vmin);
+  margin-bottom: calc(20px + 4vmin);
 }
 
 .input-field {
